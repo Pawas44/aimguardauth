@@ -1,0 +1,143 @@
+{
+  "theme": {
+    "mode": "dark-first",
+    "archetype": "The Performance Pro / High-Contrast Tech",
+    "description": "A premium, sleek gamer/SaaS control panel designed for developers. Avoids generic SaaS templates. Focus on high-contrast data legibility, terminal-inspired details for logs, and a dark tactical aesthetic."
+  },
+  "typography": {
+    "primary_heading": "Cabinet Grotesk",
+    "primary_body": "Satoshi",
+    "technical_data": "JetBrains Mono",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-bold tracking-tighter",
+      "h2": "text-2xl sm:text-3xl font-semibold tracking-tight",
+      "h3": "text-xl font-medium tracking-tight",
+      "body": "text-base leading-relaxed text-muted-foreground",
+      "labels": "text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground",
+      "data": "font-mono text-sm tracking-tight"
+    }
+  },
+  "colors": {
+    "dark": {
+      "background": "#05050A",
+      "surface": "#0F0F16",
+      "border": "#1F1F2E",
+      "primary": "#00F0FF",
+      "primary_foreground": "#000000",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A0A0B0",
+      "success": "#00E676",
+      "danger": "#FF2A55",
+      "warning": "#EAB308",
+      "muted": "#1F1F2E"
+    },
+    "light": {
+      "background": "#F8F9FA",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "primary": "#09090B",
+      "primary_foreground": "#FFFFFF",
+      "text_primary": "#0A0A0A",
+      "text_secondary": "#64748B",
+      "success": "#10B981",
+      "danger": "#E11D48",
+      "warning": "#D97706",
+      "muted": "#F1F5F9"
+    }
+  },
+  "visual_enhancers": {
+    "surfaces": {
+      "cards": "Flat background with 1px solid border (border-border), no soft drop shadows. Sharp and technical.",
+      "modals": "Crystal Glass effect: backdrop-blur-xl with semi-transparent background (bg-black/60 in dark, bg-white/70 in light). 1px inner stroke.",
+      "sidebar": "Subtle border-r to separate from main content. Uses background color slightly offset from main bg if needed."
+    },
+    "effects": {
+      "glow": "Use subtle drop-shadows on active status badges (e.g. drop-shadow-[0_0_8px_rgba(0,230,118,0.5)]) in dark mode to mimic LEDs.",
+      "hover": "Slight lift (-translate-y-0.5) and border color illumination on cards. Interactive rows should have bg-muted/50 on hover."
+    }
+  },
+  "grids_and_layouts": {
+    "general": "Mobile-first responsive. Container padding p-4 md:p-8.",
+    "dashboard_grid": {
+      "mode": "High Density Grid",
+      "base": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "widgets": {
+        "stats": "col-span-1",
+        "main_chart": "col-span-2 lg:col-span-3 min-h-[300px]",
+        "feed": "col-span-1 min-h-[300px]"
+      }
+    },
+    "feature_flags_grid": "Dense grid for 24 toggles: grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4. Each toggle in a compact flex container with a border and subtle bg.",
+    "tables": "Full width, text-left. Use JetBrains Mono for IPs, versions, and HWID columns. Fixed headers if possible."
+  },
+  "components": [
+    {
+      "name": "Stat Card",
+      "description": "Use for Total Users, Active, Banned. Technical look.",
+      "styling": "border border-border bg-surface p-6 rounded-lg. Top label: tiny uppercase. Metric: text-4xl JetBrains Mono. Include small trend indicator (+5%)."
+    },
+    {
+      "name": "Status Badge",
+      "description": "For Active, Banned, Expired, Disabled states.",
+      "styling": "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold. Dark mode Active: bg-[#00E676]/10 text-[#00E676] border border-[#00E676]/20."
+    },
+    {
+      "name": "Feature Flag Toggle",
+      "description": "Sleek switch for cheating features (Aimbot, ESP, etc.)",
+      "styling": "Shadcn Switch customized to brand colors. Label uses technical font. Container p-3 border border-border rounded-md hover:border-primary/50 transition-colors."
+    },
+    {
+      "name": "Data Table",
+      "description": "Used for Users, Login Logs, Client Versions.",
+      "styling": "border-collapse. th: uppercase tracking-wider text-muted-foreground bg-muted/20. td: py-3 border-b border-border."
+    }
+  ],
+  "motion": {
+    "hover_states": "Fast and snappy. transition-all duration-200 ease-in-out.",
+    "entrance": "Staggered fade-in for table rows and grid cards (framer-motion).",
+    "modals": "Fade in with a slight scale up (0.95 to 1)."
+  },
+  "media_and_images": {
+    "image_urls": {
+      "login_background": {
+        "url": "https://images.pexels.com/photos/8108685/pexels-photo-8108685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Abstract geometric shapes formed by neon strip lights in dark setting.",
+        "category": "background",
+        "instructions": "Use as a full-cover background image on the login screen. Apply a heavy overlay (e.g., bg-black/70 or a radial gradient) so the login panel and text remain 100% accessible and high contrast."
+      }
+    }
+  },
+  "charts": {
+    "libraries": ["recharts"],
+    "styling": {
+      "tooltip": "Dark mode tooltips must have solid bg-surface, border, and white text. No transparent tooltips.",
+      "colors": ["#00F0FF", "#00E676", "#FF2A55", "#EAB308"],
+      "grid": "stroke-border/50 stroke-dasharray-4"
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure all text against dark surfaces meets at least 4.5:1 ratio.",
+    "focus": "focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none.",
+    "testing": "All interactive elements MUST include data-testid (e.g., data-testid='login-submit-button', data-testid='toggle-aimbot')."
+  },
+  "instructions_to_main_agent": [
+    "Use standard HTML/Tailwind for structural layout and Shadcn for interactive pieces (Tables, Modals, Switches, Forms, Drawers).",
+    "Implement a robust Dark/Light mode toggle in the top bar using next-themes or raw React state. Default to dark mode.",
+    "Design the Sidebar as a persistent navigation menu on the left, top bar for user profile/theme/logout.",
+    "In the Users table, clicking 'Edit' should open a Drawer or Modal. This modal needs a 24-item grid of boolean Feature Flags (use Shadcn Switch) and text inputs for Expiry/HWID.",
+    "Avoid default purple/blue gradients. Stick to the stark, technical Void Black / Cyan / Neon Green / Crimson palette.",
+    "Include recharts for the login-activity trend chart and package distribution donut on the Overview page.",
+    "Ensure 'JetBrains Mono' is applied to data points like IPs, HWIDs, and version hashes to give a terminal/developer feel.",
+    "Include Fontshare CDN in index.css for Cabinet Grotesk and Satoshi. Include Google Fonts for JetBrains Mono. Set them up in tailwind.config.js.",
+    "For icons, install and use lucide-react. Do NOT use emojis."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not apply global `transition: all` as it breaks transforms.",
+    "Never center align the main app container. Let the layout breathe with grid and flexbox.",
+    "Do not use generic emoji for icons. Use lucide-react.",
+    "Always apply hover, focus, and active states to interactive elements.",
+    "Use 2x-3x more spacing (e.g., p-6 or p-8) than typical tight designs to look premium.",
+    "Add layered styling to Modals and Drawers (glassmorphism in dark mode).",
+    "Ensure all mock data looks realistic (real looking IPs, hashes, game cheat names like 'AimbotExternal', 'NoRecoil')."
+  ]
+}

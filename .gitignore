@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production builds
+build/
+dist/
+frontend/build/
+backend/dist/
+
+# Environment files (Protected)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+backend/.env
+frontend/.env
+*.env
+!*.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Vercel
+.vercel/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+memory/

@@ -1,0 +1,90 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,500&f[]=satoshi@400,500,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 17% 98%;
+    --foreground: 0 0% 4%;
+    --surface: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 88%;
+    --ring: 240 10% 4%;
+    --primary: 240 10% 4%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --success: 160 84% 39%;
+    --danger: 347 77% 50%;
+    --warning: 32 95% 44%;
+    --radius: 0.6rem;
+    --glow: 240 10% 4%;
+  }
+
+  .dark {
+    --background: 240 33% 3%;
+    --foreground: 0 0% 100%;
+    --surface: 240 19% 7%;
+    --border: 240 19% 15%;
+    --input: 240 19% 15%;
+    --ring: 184 100% 50%;
+    --primary: 184 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --muted: 240 19% 12%;
+    --muted-foreground: 240 8% 66%;
+    --success: 151 100% 45%;
+    --danger: 347 100% 58%;
+    --warning: 48 96% 47%;
+    --glow: 184 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 6px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  .label-tech {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground;
+  }
+  .card-tech {
+    @apply border border-border bg-surface rounded-lg;
+  }
+  .glow-primary {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.2), 0 0 22px -6px hsl(var(--primary) / 0.5);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
