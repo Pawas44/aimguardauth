@@ -25,6 +25,17 @@ const adminAuth = (req: Request, res: Response, next: NextFunction) => {
     next();
 };
 
+// Root health/status endpoint (Browser friendly)
+app.get('/', (req: Request, res: Response) => {
+    res.json({
+        success: true,
+        service: "AimGuard Auth API",
+        status: "operational",
+        version: "2.0.0",
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Main Auth Endpoint (The C++ client hits this)
 app.post('/api/auth/', authEndpoint);
 
