@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const rawBackendUrl = process.env.REACT_APP_BACKEND_URL || "";
+const rawBackendUrl = process.env.REACT_APP_BACKEND_URL || "https://backend-alpha-topaz-68.vercel.app";
 const cleanBackendUrl = rawBackendUrl.replace(/\/+$/, "");
 export const API = cleanBackendUrl ? `${cleanBackendUrl}/api` : "/api";
 
