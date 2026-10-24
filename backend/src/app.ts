@@ -29,7 +29,7 @@ const adminAuth = (req: Request, res: Response, next: NextFunction) => {
 app.get('/', (req: Request, res: Response) => {
     res.json({
         success: true,
-        service: "AimGuard Auth API",
+        service: "FindexAuth API",
         status: "operational",
         version: "2.0.0",
         timestamp: new Date().toISOString()

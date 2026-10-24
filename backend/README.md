@@ -1,4 +1,4 @@
-# Auth API Backend
+# FindexAuth API Backend
 
 This project serves as the robust backend for the custom C++ authentication client. It implements the necessary routing, backwards-compatible encryption decoding, and JSON formatting to act as a seamless drop-in replacement for the original lost API.
 

@@ -34,7 +34,7 @@ function SidebarContent({ onNavigate, theme, toggleTheme, onLogout }) {
           <ShieldCheck className="h-5 w-5" />
         </div>
         <div>
-          <div className="font-heading text-lg font-extrabold leading-none tracking-tight">SENTINEL</div>
+          <div className="font-heading text-lg font-extrabold leading-none tracking-tight">FINDEXAUTH</div>
           <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             Auth Control
           </div>

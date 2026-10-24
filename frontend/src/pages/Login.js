@@ -60,7 +60,7 @@ export default function Login() {
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground ring-1 ring-border ring-offset-2 ring-offset-background dark:ring-0 dark:glow-primary">
             <ShieldCheck className="h-7 w-7" />
           </div>
-          <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">SENTINEL</h1>
+          <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">FINDEXAUTH</h1>
           <p className="mt-2 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Auth Control Panel
           </p>
